@@ -13,4 +13,9 @@ public class Radix{
     }
     return len;
   }
+  public static void merge(MyLinkedList original, MyLinkedList[]buckets) {
+    for (int i=0; i<buckets.length; i++) {
+      original.extend(buckets[i]);
+    }
+  }
 }
