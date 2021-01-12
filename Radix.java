@@ -18,4 +18,20 @@ public class Radix{
       original.extend(buckets[i]);
     }
   }
+  public static void radixSortSimple(SortableLinkedList data) {
+    int maxlen=0;
+    for (int i=0; i<data.size(); i++){
+      if (length(data.get(i))>maxlen) maxlen=length(data.get(i));
+    }
+    SortableLinkedList[] buckets=new SortableLinkedList[10];
+    for (int i=0; i<maxlen; i++){
+      for (int j=0; j<data.size(); j++) {
+        int digit=nth(data.get(j), i);
+        for (int a=0; a<10; a++){
+          if (digit==a) buckets[a].add(data.get(j));
+        }
+      }
+      merge(data, buckets);
+    }
+  }
 }
