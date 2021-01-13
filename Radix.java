@@ -1,9 +1,10 @@
+import java.util.*;
 public class Radix{
   public static int nth(int n, int col){
     for (int i=0; i<col; i++){
       n=n/10;
     }
-    return n%10;
+    return Math.abs(n%10);
   }
   public static int length(int n){
     int len=1;
@@ -43,13 +44,12 @@ public class Radix{
       if (data.get(i)<0) negative.add(data.get(i));
       else positive.add(data.get(i));
     }
+    while (data.size()!=0) data.remove(0);
     radixSortSimple(positive);
     radixSortSimple(negative);
-    for (int i=negative.size()-1; i>0; i--){
+    for (int i=negative.size()-1; i>=0; i--){
       data.add(negative.get(i));
     }
-    while (data.size()!=0) data.remove(0);
-    data.extend(negative);
     data.extend(positive);
   }
 }
