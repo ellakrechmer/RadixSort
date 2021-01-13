@@ -45,7 +45,7 @@ public class Radix{
     }
     radixSortSimple(positive);
     radixSortSimple(negative);
-    for (int i=0; i<negative.size(); i++){
+    for (int i=negative.size()-1; i>0; i--){
       data.add(negative.get(i));
     }
     while (data.size()!=0) data.remove(0);
