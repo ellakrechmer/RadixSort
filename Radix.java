@@ -22,7 +22,9 @@ public class Radix{
   public static void radixSortSimple(SortableLinkedList data) {
     int maxlen=0;
     for (int i=0; i<data.size(); i++){
-      if (length(data.get(i))>maxlen) maxlen=length(data.get(i));
+      data.add(data.get(0));
+      if (length(data.get(0))>maxlen) maxlen=length(data.get(0));
+      data.remove(0);
     }
     SortableLinkedList[] buckets=new SortableLinkedList[10];
     for (int a=0; a<10; a++) buckets[a]=new SortableLinkedList();
