@@ -8,8 +8,8 @@ public class Tester {
     // System.out.println(r.length(d));
     // System.out.println(r.length(e));
     SortableLinkedList s=new SortableLinkedList();
-    s.add(50); s.add(41); s.add(11); s.add(12); s.add(42); s.add(32); s.add(32);
-    s.add(23); s.add(34); s.add(44); s.add(34); s.add(87); s.add(77); s.add(58);
+    s.add(50); s.add(-41); s.add(11); s.add(-12); s.add(42); s.add(32); s.add(32);
+    s.add(-23); s.add(34); s.add(-44); s.add(34); s.add(87); s.add(77); s.add(58);
     s.add(365); s.add(8);
     System.out.println(s);
     r.radixSortSimple(s);
